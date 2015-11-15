@@ -13,13 +13,23 @@
 
 NSString * const ArticlesURL = @"http://feeds.bbci.co.uk/news/rss.xml";
 
-@implementation ArticleStore
+@implementation ArticleStore {
+    id<NetworkService> _networkService;
+}
+
+- (instancetype)initWithNetworkService:(id<NetworkService>)networkService
+{
+    if (self = [super init]) {
+        _networkService = networkService;
+    }
+    return self;
+}
 
 - (void)fetchArticles:(SuccessHandler)successCallback
 {
     NSURL * const articlesURL = [NSURL URLWithString:ArticlesURL];
     
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:articlesURL completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
+    [_networkService makeRequestWithUrl:articlesURL completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
         if (error != nil) {
             NSLog(@"error: %@", error);
         } else if (data != nil) {
@@ -33,7 +43,6 @@ NSString * const ArticlesURL = @"http://feeds.bbci.co.uk/news/rss.xml";
             successCallback(@[]);
         }
     }];
-    [task resume];
 }
 
 @end

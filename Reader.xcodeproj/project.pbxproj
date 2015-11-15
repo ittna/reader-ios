@@ -21,6 +21,8 @@
 		96098B7C1BF8DA50003A8ECF /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B7B1BF8DA50003A8ECF /* Article.m */; };
 		96098B7F1BF8E3AB003A8ECF /* simplefeed.xml in Resources */ = {isa = PBXBuildFile; fileRef = 96098B7E1BF8E3AB003A8ECF /* simplefeed.xml */; };
 		96098B831BF8E901003A8ECF /* NSURLSession+NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B821BF8E901003A8ECF /* NSURLSession+NetworkService.m */; };
+		96098B871BF8EC6D003A8ECF /* MockNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B861BF8EC6D003A8ECF /* MockNetworkService.m */; };
+		96098B891BF8EECF003A8ECF /* ArticleStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B881BF8EECF003A8ECF /* ArticleStoreTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		96098B801BF8E7DE003A8ECF /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkService.h; path = Helpers/NetworkService.h; sourceTree = "<group>"; };
 		96098B811BF8E901003A8ECF /* NSURLSession+NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+NetworkService.h"; path = "Helpers/NSURLSession+NetworkService.h"; sourceTree = "<group>"; };
 		96098B821BF8E901003A8ECF /* NSURLSession+NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+NetworkService.m"; path = "Helpers/NSURLSession+NetworkService.m"; sourceTree = "<group>"; };
+		96098B851BF8EC6D003A8ECF /* MockNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockNetworkService.h; path = Mocks/MockNetworkService.h; sourceTree = "<group>"; };
+		96098B861BF8EC6D003A8ECF /* MockNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockNetworkService.m; path = Mocks/MockNetworkService.m; sourceTree = "<group>"; };
+		96098B881BF8EECF003A8ECF /* ArticleStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleStoreTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +134,10 @@
 		96098B5A1BF8D862003A8ECF /* ReaderTests */ = {
 			isa = PBXGroup;
 			children = (
+				96098B841BF8EC47003A8ECF /* Mocks */,
 				96098B7D1BF8E30A003A8ECF /* Resources */,
 				96098B5B1BF8D862003A8ECF /* ArticleParserTests.m */,
+				96098B881BF8EECF003A8ECF /* ArticleStoreTests.m */,
 				96098B5D1BF8D862003A8ECF /* Info.plist */,
 			);
 			path = ReaderTests;
@@ -192,6 +199,15 @@
 				96098B7E1BF8E3AB003A8ECF /* simplefeed.xml */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		96098B841BF8EC47003A8ECF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				96098B851BF8EC6D003A8ECF /* MockNetworkService.h */,
+				96098B861BF8EC6D003A8ECF /* MockNetworkService.m */,
+			);
+			name = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96098B871BF8EC6D003A8ECF /* MockNetworkService.m in Sources */,
+				96098B891BF8EECF003A8ECF /* ArticleStoreTests.m in Sources */,
 				96098B5C1BF8D862003A8ECF /* ArticleParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

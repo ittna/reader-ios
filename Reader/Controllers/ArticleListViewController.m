@@ -12,6 +12,8 @@
 #import "ArticleDetailViewController.h"
 #import "ArticleCell.h"
 
+#import "NSURLSession+NetworkService.h"
+
 @interface ArticleListViewController ()
 
 @property (nonatomic, strong) ArticleStore *articleStore;
@@ -24,7 +26,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        _articleStore = [[ArticleStore alloc] init];
+        _articleStore = [[ArticleStore alloc] initWithNetworkService:[NSURLSession sharedSession]];
         _articles = @[];
     }
     return self;
