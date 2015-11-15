@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet title="XSL_formatting" type="text/xsl" href="/shared/bsp/xsl/rss/nolsol.xsl"?>
+
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>BBC News - Home</title>
+        <link>http://www.bbc.co.uk/news/#sa-ns_mchannel=rss&amp;ns_source=PublicRSS20-sa</link>
+        <description>The latest stories from the Home section of the BBC News web site.</description>
+        <language>en-gb</language>
+        <lastBuildDate>Mon, 09 Nov 2015 08:13:11 GMT</lastBuildDate>
+        <copyright>Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.</copyright>
+        <image>
+            <url>http://news.bbcimg.co.uk/nol/shared/img/bbc_news_120x60.gif</url>
+            <title>BBC News - Home</title>
+            <link>http://www.bbc.co.uk/news/#sa-ns_mchannel=rss&amp;ns_source=PublicRSS20-sa</link>
+            <width>120</width>
+            <height>60</height>
+        </image>
+        <ttl>15</ttl>
+        <atom:link href="http://feeds.bbci.co.uk/news/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Osborne 'secures deals' on 30% cuts</title>
+            <description>Four government departments have provisionally agreed to cut their spending by an average of 30% over the next four years, George Osborne is to announce.</description>
+            <link>http://www.bbc.co.uk/news/uk-34763261#sa-ns_mchannel=rss&amp;ns_source=PublicRSS20-sa</link>
+            <guid isPermaLink="false">http://www.bbc.co.uk/news/uk-34763261</guid>
+            <pubDate>Mon, 09 Nov 2015 07:58:26 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
