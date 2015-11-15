@@ -30,10 +30,21 @@
 - (void)testParsingSimpleFeedCallsSuccessHandlerWithExpectedArticle {
     NSURL *simpleFeedUrl = [[NSBundle bundleForClass:[self class]] URLForResource:@"simplefeed" withExtension:@"xml"];
     
+    // Mon, 09 Nov 2015 07:58:26 GMT
+    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.day = 9;
+    dateComponents.month = 11;
+    dateComponents.year = 2015;
+    dateComponents.hour = 7;
+    dateComponents.minute = 58;
+    dateComponents.second = 26;
+    dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    
     XCTestExpectation *successExpectation = [self expectationWithDescription:@"success handler gets called"];
-
+    NSArray *expectedArticles = @[[Article articleWithTitle:@"Osborne 'secures deals' on 30% cuts" description:@"Four government departments have provisionally agreed to cut their spending by an average of 30% over the next four years, George Osborne is to announce." url:[NSURL URLWithString:@"http://www.bbc.co.uk/news/uk-34763261#sa-ns_mchannel=rss&ns_source=PublicRSS20-sa"] pubDate:[calendar dateFromComponents:dateComponents]]];
     ArticleParser *articleParser = [[ArticleParser alloc] initWithSuccessHandler:^(NSArray *articles) {
-        XCTAssertEqualObjects(@[[Article articleWithTitle:@"Osborne 'secures deals' on 30% cuts" description:@"Four government departments have provisionally agreed to cut their spending by an average of 30% over the next four years, George Osborne is to announce." url:[NSURL URLWithString:@"http://www.bbc.co.uk/news/uk-34763261#sa-ns_mchannel=rss&ns_source=PublicRSS20-sa"]]], articles);
+        XCTAssertEqualObjects(expectedArticles, articles);
         [successExpectation fulfill];
     }];
     

@@ -8,7 +8,8 @@
 
 #import "ArticleListViewController.h"
 
-#import "ArticleStore.h"
+#import "ArticleListViewModel.h"
+#import "ArticleViewModel.h"
 #import "ArticleDetailViewController.h"
 #import "ArticleCell.h"
 
@@ -16,8 +17,7 @@
 
 @interface ArticleListViewController ()
 
-@property (nonatomic, strong) ArticleStore *articleStore;
-@property (nonatomic, strong) NSArray *articles;
+@property (nonatomic, strong) ArticleListViewModel *viewModel;
 
 @end
 
@@ -26,8 +26,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        _articleStore = [[ArticleStore alloc] initWithNetworkService:[NSURLSession sharedSession]];
-        _articles = @[];
+        _viewModel = [[ArticleListViewModel alloc] initWithNetworkService:[NSURLSession sharedSession]];
     }
     return self;
 }
@@ -38,10 +37,9 @@
     self.tableView.estimatedRowHeight = 120;
     
     __weak ArticleListViewController *weakSelf = self;
-    [self.articleStore fetchArticles:^(NSArray *articles) {
+    [self.viewModel loadWithCompletion:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             ArticleListViewController *strongSelf = weakSelf;
-            strongSelf.articles = articles;
             [strongSelf.tableView reloadData];
         });
     }];
@@ -54,18 +52,18 @@
 }
 
 - (NSInteger)tableView:(__unused UITableView *)tableView numberOfRowsInSection:(__unused NSInteger)section {
-    return (NSInteger)[self.articles count];
+    return (NSInteger)[self.viewModel.articles count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"articleCell" forIndexPath:indexPath];
     
     // Get the relevant article
-    Article *article = self.articles[indexPath.row];
+    ArticleViewModel *article = self.viewModel.articles[indexPath.row];
     
     // Configure the cell content
     cell.titleLabel.text = article.title;
-    cell.descriptionLabel.text = article.desc;
+    cell.descriptionLabel.text = article.publishedSince;
     
     return cell;
 }
@@ -77,7 +75,7 @@
         UINavigationController *navigationController = (UINavigationController*)segue.destinationViewController;
         ArticleDetailViewController *detailVC = (ArticleDetailViewController*)navigationController.topViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-        detailVC.article = self.articles[indexPath.row];
+        detailVC.article = self.viewModel.articles[indexPath.row];
         detailVC.navigationItem.leftBarButtonItem = [self.splitViewController displayModeButtonItem];
         detailVC.navigationItem.leftItemsSupplementBackButton = YES;
     }

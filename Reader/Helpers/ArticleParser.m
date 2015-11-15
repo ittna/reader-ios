@@ -66,7 +66,13 @@
         NSString *title = self.itemDict[@"title"];
         NSString *description = self.itemDict[@"description"];
         NSString *link = self.itemDict[@"link"];
-        [self.articles addObject:[Article articleWithTitle:title description:description url:[NSURL URLWithString:link]]];
+        NSString *pubDate = self.itemDict[@"pubDate"];
+        
+        //Mon, 09 Nov 2015 07:58:26 GMT
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"EEE, dd MM yyyy HH:mm:ss zzz"];
+        
+        [self.articles addObject:[Article articleWithTitle:title description:description url:[NSURL URLWithString:link] pubDate:[dateFormatter dateFromString:pubDate]]];
         
         self.itemDict = nil;
     }

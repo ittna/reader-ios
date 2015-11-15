@@ -13,7 +13,8 @@
 @property(nonatomic, copy, readonly) NSString *title;
 @property(nonatomic, copy, readonly) NSString *desc;
 @property(nonatomic, copy, readonly) NSURL *url;
+@property(nonatomic, copy, readonly) NSDate *pubDate;
 
-+ (instancetype)articleWithTitle:(NSString*)title description:(NSString*)description url:(NSURL*)url;
++ (instancetype)articleWithTitle:(NSString*)title description:(NSString*)description url:(NSURL*)url pubDate:(NSDate*)pubDate;
 
 @end

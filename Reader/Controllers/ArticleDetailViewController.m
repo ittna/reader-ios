@@ -8,6 +8,8 @@
 
 #import "ArticleDetailViewController.h"
 
+#import "ArticleViewModel.h"
+
 @interface ArticleDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -22,7 +24,7 @@
     [self configureView];
 }
 
-- (void)setArticle:(Article *)article
+- (void)setArticle:(ArticleViewModel *)article
 {
     _article = article;
     [self configureView];
@@ -30,7 +32,7 @@
 
 - (void)configureView
 {
-    Article *article = self.article;
+    ArticleViewModel *article = self.article;
     UIWebView *webView = self.webView;
     
     if (article != nil && webView != nil) {

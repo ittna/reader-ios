@@ -1,5 +1,5 @@
 //
-//  ArticleStoreTests.m
+//  ArticleListViewModelTests.m
 //  Reader
 //
 //  Created by Antti Ahvenlampi on 15/11/15.
@@ -8,14 +8,14 @@
 
 #import <XCTest/XCTest.h>
 
-#import "ArticleStore.h"
+#import "ArticleListViewModel.h"
 #import "MockNetworkService.h"
 
-@interface ArticleStoreTests : XCTestCase
+@interface ArticleListViewModelTests : XCTestCase
 
 @end
 
-@implementation ArticleStoreTests
+@implementation ArticleListViewModelTests
 
 - (void)setUp {
     [super setUp];
@@ -27,18 +27,18 @@
     [super tearDown];
 }
 
-- (void)testFetchingSimpleFeedCallsSuccessHandler {
+- (void)testLoadingSimpleFeedCallsCompletionHandler {
     NSURL *feedUrl = [[NSBundle bundleForClass:[self class]] URLForResource:@"simplefeed" withExtension:@"xml"];
     
     MockNetworkService *networkService = [[MockNetworkService alloc] init];
     [networkService setResultData:[NSData dataWithContentsOfURL:feedUrl] forUrl:[NSURL URLWithString:@"http://feeds.bbci.co.uk/news/rss.xml"]];
     
-    ArticleStore *articleStore = [[ArticleStore alloc] initWithNetworkService:networkService];
+    ArticleListViewModel *listVM = [[ArticleListViewModel alloc] initWithNetworkService:networkService];
 
-    XCTestExpectation *successExpectation = [self expectationWithDescription:@"success handler gets called"];
-    [articleStore fetchArticles:^(NSArray *articles) {
-        XCTAssertEqual(1, [articles count]);
-        [successExpectation fulfill];
+    XCTestExpectation *completionExpectation = [self expectationWithDescription:@"completion handler gets called"];
+    [listVM loadWithCompletion:^{
+        XCTAssertEqual(1, [listVM.articles count]);
+        [completionExpectation fulfill];
     }];
     
     [self waitForExpectationsWithTimeout:0 handler:nil];
