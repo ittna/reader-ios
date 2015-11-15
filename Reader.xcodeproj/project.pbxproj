@@ -20,6 +20,7 @@
 		96098B791BF8DA44003A8ECF /* ArticleStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B781BF8DA44003A8ECF /* ArticleStore.m */; };
 		96098B7C1BF8DA50003A8ECF /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B7B1BF8DA50003A8ECF /* Article.m */; };
 		96098B7F1BF8E3AB003A8ECF /* simplefeed.xml in Resources */ = {isa = PBXBuildFile; fileRef = 96098B7E1BF8E3AB003A8ECF /* simplefeed.xml */; };
+		96098B831BF8E901003A8ECF /* NSURLSession+NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B821BF8E901003A8ECF /* NSURLSession+NetworkService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,9 @@
 		96098B7A1BF8DA50003A8ECF /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Article.h; path = Models/Article.h; sourceTree = "<group>"; };
 		96098B7B1BF8DA50003A8ECF /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Article.m; path = Models/Article.m; sourceTree = "<group>"; };
 		96098B7E1BF8E3AB003A8ECF /* simplefeed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = simplefeed.xml; path = Resources/simplefeed.xml; sourceTree = "<group>"; };
+		96098B801BF8E7DE003A8ECF /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkService.h; path = Helpers/NetworkService.h; sourceTree = "<group>"; };
+		96098B811BF8E901003A8ECF /* NSURLSession+NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+NetworkService.h"; path = "Helpers/NSURLSession+NetworkService.h"; sourceTree = "<group>"; };
+		96098B821BF8E901003A8ECF /* NSURLSession+NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+NetworkService.m"; path = "Helpers/NSURLSession+NetworkService.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,9 @@
 			children = (
 				96098B741BF8DA37003A8ECF /* ArticleParser.h */,
 				96098B751BF8DA37003A8ECF /* ArticleParser.m */,
+				96098B801BF8E7DE003A8ECF /* NetworkService.h */,
+				96098B811BF8E901003A8ECF /* NSURLSession+NetworkService.h */,
+				96098B821BF8E901003A8ECF /* NSURLSession+NetworkService.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -295,6 +302,7 @@
 				96098B431BF8D862003A8ECF /* main.m in Sources */,
 				96098B721BF8DA29003A8ECF /* ArticleDetailViewController.m in Sources */,
 				96098B6D1BF8DA1E003A8ECF /* ArticleCell.m in Sources */,
+				96098B831BF8E901003A8ECF /* NSURLSession+NetworkService.m in Sources */,
 				96098B731BF8DA29003A8ECF /* ArticleListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
