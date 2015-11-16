@@ -11,6 +11,8 @@
 #import "ArticleViewModel.h"
 #import "ArticleParser.h"
 
+#import "RealDateTimeService.h"
+
 NSString * const ArticlesURL = @"http://feeds.bbci.co.uk/news/rss.xml";
 
 @implementation ArticleListViewModel {
@@ -41,9 +43,11 @@ NSString * const ArticlesURL = @"http://feeds.bbci.co.uk/news/rss.xml";
             ArticleParser *articleParser = [[ArticleParser alloc] initWithSuccessHandler:^(NSArray *articles) {
                 ArticleListViewModel *strongSelf = weakSelf;
                 
+                id<DateTimeService> dateTimeService = [[RealDateTimeService alloc] init];
+                
                 NSMutableArray *articleViewModels = [NSMutableArray array];
                 [articles enumerateObjectsUsingBlock:^(Article *article, NSUInteger idx, BOOL *stop) {
-                    [articleViewModels addObject:[[ArticleViewModel alloc] initWithArticle:article]];
+                    [articleViewModels addObject:[[ArticleViewModel alloc] initWithArticle:article dateTimeService:dateTimeService]];
                 }];
                 
                 strongSelf->_articles = [NSArray arrayWithArray:articleViewModels];

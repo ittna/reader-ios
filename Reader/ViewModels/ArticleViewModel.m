@@ -12,11 +12,13 @@
 
 @implementation ArticleViewModel {
     Article *_article;
+    id<DateTimeService> _dateTimeService;
 }
 
-- (instancetype)initWithArticle:(Article *)article {
+- (instancetype)initWithArticle:(Article *)article dateTimeService:(id<DateTimeService>)dateTimeService {
     if (self = [super init]) {
         _article = article;
+        _dateTimeService = dateTimeService;
     }
     return self;
 }
@@ -34,7 +36,7 @@
 }
 
 - (NSString *)publishedSince {
-    NSTimeInterval since = -[_article.pubDate timeIntervalSinceNow];
+    NSTimeInterval since = [[_dateTimeService currentDate] timeIntervalSinceDate:_article.pubDate];
     if (since < 60) {
         return @"just now";
     }

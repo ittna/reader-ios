@@ -24,10 +24,19 @@
 		96098B891BF8EECF003A8ECF /* ArticleListViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B881BF8EECF003A8ECF /* ArticleListViewModelTests.m */; };
 		96098B951BF920F0003A8ECF /* ArticleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B921BF920F0003A8ECF /* ArticleListViewModel.m */; };
 		96098B961BF920F0003A8ECF /* ArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B941BF920F0003A8ECF /* ArticleViewModel.m */; };
+		96098B9E1BF9EE14003A8ECF /* RealDateTimeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098B9D1BF9EE14003A8ECF /* RealDateTimeService.m */; };
+		96098BA61BF9F001003A8ECF /* ReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96098BA51BF9F000003A8ECF /* ReaderUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		96098B581BF8D862003A8ECF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96098B361BF8D861003A8ECF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96098B3D1BF8D861003A8ECF;
+			remoteInfo = Reader;
+		};
+		96098BA81BF9F001003A8ECF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 96098B361BF8D861003A8ECF /* Project object */;
 			proxyType = 1;
@@ -69,6 +78,12 @@
 		96098B921BF920F0003A8ECF /* ArticleListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleListViewModel.m; path = ViewModels/ArticleListViewModel.m; sourceTree = "<group>"; };
 		96098B931BF920F0003A8ECF /* ArticleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleViewModel.h; path = ViewModels/ArticleViewModel.h; sourceTree = "<group>"; };
 		96098B941BF920F0003A8ECF /* ArticleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleViewModel.m; path = ViewModels/ArticleViewModel.m; sourceTree = "<group>"; };
+		96098B9B1BF9EDA8003A8ECF /* DateTimeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateTimeService.h; path = Helpers/DateTimeService.h; sourceTree = "<group>"; };
+		96098B9C1BF9EE14003A8ECF /* RealDateTimeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RealDateTimeService.h; path = Helpers/RealDateTimeService.h; sourceTree = "<group>"; };
+		96098B9D1BF9EE14003A8ECF /* RealDateTimeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RealDateTimeService.m; path = Helpers/RealDateTimeService.m; sourceTree = "<group>"; };
+		96098BA31BF9F000003A8ECF /* ReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96098BA51BF9F000003A8ECF /* ReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReaderUITests.m; sourceTree = "<group>"; };
+		96098BA71BF9F001003A8ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +101,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96098BA01BF9F000003A8ECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +116,7 @@
 			children = (
 				96098B401BF8D862003A8ECF /* Reader */,
 				96098B5A1BF8D862003A8ECF /* ReaderTests */,
+				96098BA41BF9F000003A8ECF /* ReaderUITests */,
 				96098B3F1BF8D861003A8ECF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +126,7 @@
 			children = (
 				96098B3E1BF8D861003A8ECF /* Reader.app */,
 				96098B571BF8D862003A8ECF /* ReaderTests.xctest */,
+				96098BA31BF9F000003A8ECF /* ReaderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +187,9 @@
 				96098B801BF8E7DE003A8ECF /* NetworkService.h */,
 				96098B811BF8E901003A8ECF /* NSURLSession+NetworkService.h */,
 				96098B821BF8E901003A8ECF /* NSURLSession+NetworkService.m */,
+				96098B9B1BF9EDA8003A8ECF /* DateTimeService.h */,
+				96098B9C1BF9EE14003A8ECF /* RealDateTimeService.h */,
+				96098B9D1BF9EE14003A8ECF /* RealDateTimeService.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -215,6 +242,15 @@
 			name = ViewModels;
 			sourceTree = "<group>";
 		};
+		96098BA41BF9F000003A8ECF /* ReaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				96098BA51BF9F000003A8ECF /* ReaderUITests.m */,
+				96098BA71BF9F001003A8ECF /* Info.plist */,
+			);
+			path = ReaderUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +289,24 @@
 			productReference = 96098B571BF8D862003A8ECF /* ReaderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		96098BA21BF9F000003A8ECF /* ReaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96098BAA1BF9F001003A8ECF /* Build configuration list for PBXNativeTarget "ReaderUITests" */;
+			buildPhases = (
+				96098B9F1BF9F000003A8ECF /* Sources */,
+				96098BA01BF9F000003A8ECF /* Frameworks */,
+				96098BA11BF9F000003A8ECF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96098BA91BF9F001003A8ECF /* PBXTargetDependency */,
+			);
+			name = ReaderUITests;
+			productName = ReaderUITests;
+			productReference = 96098BA31BF9F000003A8ECF /* ReaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,6 +320,10 @@
 						CreatedOnToolsVersion = 7.1;
 					};
 					96098B561BF8D862003A8ECF = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 96098B3D1BF8D861003A8ECF;
+					};
+					96098BA21BF9F000003A8ECF = {
 						CreatedOnToolsVersion = 7.1;
 						TestTargetID = 96098B3D1BF8D861003A8ECF;
 					};
@@ -286,6 +344,7 @@
 			targets = (
 				96098B3D1BF8D861003A8ECF /* Reader */,
 				96098B561BF8D862003A8ECF /* ReaderTests */,
+				96098BA21BF9F000003A8ECF /* ReaderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -309,6 +368,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96098BA11BF9F000003A8ECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -323,6 +389,7 @@
 				96098B431BF8D862003A8ECF /* main.m in Sources */,
 				96098B951BF920F0003A8ECF /* ArticleListViewModel.m in Sources */,
 				96098B721BF8DA29003A8ECF /* ArticleDetailViewController.m in Sources */,
+				96098B9E1BF9EE14003A8ECF /* RealDateTimeService.m in Sources */,
 				96098B6D1BF8DA1E003A8ECF /* ArticleCell.m in Sources */,
 				96098B831BF8E901003A8ECF /* NSURLSession+NetworkService.m in Sources */,
 				96098B731BF8DA29003A8ECF /* ArticleListViewController.m in Sources */,
@@ -339,6 +406,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96098B9F1BF9F000003A8ECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96098BA61BF9F001003A8ECF /* ReaderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -346,6 +421,11 @@
 			isa = PBXTargetDependency;
 			target = 96098B3D1BF8D861003A8ECF /* Reader */;
 			targetProxy = 96098B581BF8D862003A8ECF /* PBXContainerItemProxy */;
+		};
+		96098BA91BF9F001003A8ECF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96098B3D1BF8D861003A8ECF /* Reader */;
+			targetProxy = 96098BA81BF9F001003A8ECF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -497,6 +577,30 @@
 			};
 			name = Release;
 		};
+		96098BAB1BF9F001003A8ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.futurice.ReaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Reader;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		96098BAC1BF9F001003A8ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.futurice.ReaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Reader;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -526,6 +630,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		96098BAA1BF9F001003A8ECF /* Build configuration list for PBXNativeTarget "ReaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96098BAB1BF9F001003A8ECF /* Debug */,
+				96098BAC1BF9F001003A8ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
